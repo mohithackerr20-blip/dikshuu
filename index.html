@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary, Dikshuu ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient Pastel Gradient Backdrop -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="aurora aurora-rose"></div>
+    <div class="aurora aurora-lavender"></div>
+    <div class="aurora aurora-mint"></div>
+    <div class="bg-grid-texture"></div>
+    <div id="floatingParticles" class="floating-particles"></div>
+  </div>
+
+  <!-- Confetti Burst Layer -->
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Refined Floating Navigation -->
+  <header class="site-header">
+    <div class="top-nav">
+      <a href="#top" class="brand-pill">
+        <span class="brand-emblem" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </span>
+        <span id="navCoupleName">Us &amp; Forever</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#open-when">Letters</a>
+        <a href="#timeline">Gallery</a>
+        <a href="#love-jar">Love Notes</a>
+        <a href="#coupons">Passes</a>
+      </nav>
+
+      <button id="musicToggleBtn" class="music-pill" type="button" aria-pressed="false" title="Play Aa Chalke Tujhe">
+        <span class="music-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="music-label">Our Song</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Editorial Hero Section -->
+    <section class="hero section">
+      <div class="hero-card">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <span class="eyebrow-pill" id="heroEyebrow">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Anniversary Keepsake Edition
+            </span>
+
+            <h1 class="hero-title">
+              For My Favorite Human,
+              <span class="highlight-name" id="partnerName">Dikshuu</span>
+            </h1>
+
+            <p class="hero-subtitle" id="heroSubtitle">
+              Every single day with you feels like my favorite chapter. I crafted this quiet pastel corner of the web just for you—filled with letters for every mood, our favorite portraits, and little keepsakes whenever you need a smile.
+            </p>
+
+            <!-- Precision Live Relationship Counter -->
+            <div class="counter-box" aria-label="Time spent together">
+              <div class="counter-header">
+                <span class="counter-eyebrow">Together in every moment</span>
+                <span class="counter-date-badge" id="anniversaryDateBadge">Since Nov 27, 2024</span>
+              </div>
+              <div class="counter-grid">
+                <div class="counter-unit">
+                  <span class="counter-value" id="countDays">0</span>
+                  <span class="counter-label">Days</span>
+                </div>
+                <div class="counter-unit">
+                  <span class="counter-value" id="countHours">00</span>
+                  <span class="counter-label">Hours</span>
+                </div>
+                <div class="counter-unit">
+                  <span class="counter-value" id="countMinutes">00</span>
+                  <span class="counter-label">Minutes</span>
+                </div>
+                <div class="counter-unit">
+                  <span class="counter-value" id="countSeconds">00</span>
+                  <span class="counter-label">Seconds</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Actions -->
+            <div class="hero-actions">
+              <a href="#open-when" class="btn btn-primary">
+                <span>Read Your Letters</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+              <button id="hugBtn" class="btn btn-secondary" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <span>Send Virtual Hug</span>
+              </button>
+            </div>
+
+            <p id="hugStatus" class="hug-status" aria-live="polite"></p>
+          </div>
+
+          <!-- Curated Portrait Showcase Card -->
+          <figure class="hero-polaroid">
+            <div class="polaroid-top-bar">
+              <span class="polaroid-index" id="heroPhotoCounter">01 / 04</span>
+              <span class="polaroid-tag-pill" id="heroPhotoTag">Flower Girl</span>
+            </div>
+
+            <button id="heroPhotoBtn" class="polaroid-photo-btn" type="button" aria-label="Open photo in gallery view">
+              <div class="polaroid-photo-wrap">
+                <img id="heroPhotoImg" src="assets/dikshuu.jpg" alt="Portrait of Dikshuu with a pastel pink flower in her hair" />
+              </div>
+              <span class="polaroid-zoom-pill" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>
+                </svg>
+                Expand
+              </span>
+            </button>
+
+            <figcaption id="heroPhotoCaption" class="polaroid-caption">
+              My prettiest forever
+            </figcaption>
+
+            <div class="polaroid-controls" aria-label="Switch hero photo">
+              <button id="heroPrevPhotoBtn" class="polaroid-nav-btn" type="button" aria-label="Previous photo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <div id="heroPhotoDots" class="polaroid-dots" aria-hidden="true"></div>
+              <button id="heroNextPhotoBtn" class="polaroid-nav-btn" type="button" aria-label="Next photo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Open When..." Mood Envelopes Section -->
+    <section id="open-when" class="section reveal">
+      <div class="section-heading">
+        <span class="section-tag">Mood Envelopes</span>
+        <h2>“Open When...” Letters</h2>
+        <p>Choose an envelope tailored to how you feel right now. Inside each one is a personal letter and a small interactive moment.</p>
+      </div>
+
+      <div class="mood-filters" role="tablist" aria-label="Filter mood cards">
+        <button class="filter-chip active" data-filter="all" type="button">All Letters</button>
+        <button class="filter-chip" data-filter="comfort" type="button">Comfort &amp; Care</button>
+        <button class="filter-chip" data-filter="playful" type="button">Playful</button>
+        <button class="filter-chip" data-filter="romantic" type="button">Romantic</button>
+      </div>
+
+      <div id="moodGrid" class="mood-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Curated Lookbook / Milestone Gallery -->
+    <section id="timeline" class="section reveal">
+      <div class="section-heading">
+        <span class="section-tag">Curated Gallery</span>
+        <h2>Our Little Milestone Story</h2>
+        <p>Four chapters, four favorite frames—from soft smiles and sunny moments to our anniversary today.</p>
+      </div>
+
+      <div id="timelineGrid" class="timeline-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Keepsake Love Jar Section -->
+    <section id="love-jar" class="section reveal">
+      <div class="jar-card">
+        <div class="jar-visual" aria-hidden="true">
+          <svg class="keepsake-jar-svg" viewBox="0 0 220 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="jarGlassGrad" x1="35" y1="54" x2="185" y2="232" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+                <stop offset="55%" stop-color="#FFF2F7" stop-opacity="0.72"/>
+                <stop offset="100%" stop-color="#EDE6FF" stop-opacity="0.85"/>
+              </linearGradient>
+              <linearGradient id="lidGrad" x1="65" y1="18" x2="155" y2="48" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F6BFD4"/>
+                <stop offset="100%" stop-color="#D9C5FF"/>
+              </linearGradient>
+            </defs>
+            <!-- Soft shadow -->
+            <ellipse cx="110" cy="236" rx="68" ry="9" fill="#D49CB6" fill-opacity="0.22"/>
+            <!-- Lid -->
+            <rect x="64" y="20" width="92" height="24" rx="10" fill="url(#lidGrad)" stroke="#FFFFFF" stroke-width="2.5"/>
+            <rect x="74" y="42" width="72" height="10" rx="4" fill="#F2D7E4" stroke="#FFFFFF" stroke-width="2"/>
+            <!-- Jar Body -->
+            <rect x="34" y="52" width="152" height="178" rx="42" fill="url(#jarGlassGrad)" stroke="#FFFFFF" stroke-width="3"/>
+            <!-- Glass highlight -->
+            <path d="M54 78C54 70 60 66 66 66" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+            <path d="M54 92V188" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+            <!-- Floating vector hearts inside jar -->
+            <g class="jar-float-1">
+              <path d="M84 184C84 184 68 173 68 162C68 156 72.5 152 78 152C81 152 83.2 153.5 84 155.5C84.8 153.5 87 152 90 152C95.5 152 100 156 100 162C100 173 84 184 84 184Z" fill="#E86F9B"/>
+            </g>
+            <g class="jar-float-2">
+              <path d="M138 176C138 176 123 166 123 156C123 150.5 127 147 132 147C134.8 147 137 148.5 138 150.5C139 148.5 141.2 147 144 147C149 147 153 150.5 153 156C153 166 138 176 138 176Z" fill="#A98DF2"/>
+            </g>
+            <g class="jar-float-3">
+              <path d="M110 144C110 144 96 134 96 125C96 120 100 116.5 104.5 116.5C107.2 116.5 109 118 110 119.8C111 118 112.8 116.5 115.5 116.5C120 116.5 124 120 124 125C124 134 110 144 110 144Z" fill="#F29F89"/>
+            </g>
+            <g class="jar-float-2">
+              <path d="M82 112C82 112 72 105 72 98.5C72 94.8 75 92 78.5 92C80.3 92 81.5 93 82 94.2C82.5 93 83.7 92 85.5 92C89 92 92 94.8 92 98.5C92 105 82 112 82 112Z" fill="#6FD1AE"/>
+            </g>
+            <circle cx="144" cy="108" r="4" fill="#F3B8CE"/>
+            <circle cx="114" cy="84" r="3" fill="#C7B6F9"/>
+          </svg>
+        </div>
+
+        <div class="jar-content">
+          <span class="section-tag">Keepsake Jar</span>
+          <h2>Reasons I Adore You</h2>
+          <p class="jar-intro">Whenever you want a quiet reminder of how deeply you are cherished, draw a note from the jar.</p>
+
+          <div class="reason-display" id="reasonDisplay" aria-live="polite">
+            <span class="reason-quote-mark" aria-hidden="true">“</span>
+            <p class="reason-text" id="reasonText">Tap below to reveal your first keepsake note.</p>
+            <span class="reason-counter" id="reasonCounter">Note 00</span>
+          </div>
+
+          <button id="drawReasonBtn" class="btn btn-primary" type="button">
+            <span>Draw a Love Note</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3l1.9 5.8L20 10.7l-6.1 1.9L12 18.5l-1.9-5.9L4 10.7l6.1-1.9L12 3z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Luxury Anniversary Passes -->
+    <section id="coupons" class="section reveal">
+      <div class="section-heading">
+        <span class="section-tag">Anniversary Passes</span>
+        <h2>Your Official Love Coupons</h2>
+        <p>Permanent passes with no expiration date. Tap any ticket to redeem whenever you feel like it.</p>
+      </div>
+
+      <div id="couponGrid" class="coupon-grid">
+        <!-- Rendered by script.js -->
+      </div>
+
+      <div class="coupon-footer-actions">
+        <button id="resetCouponsBtn" class="text-link-btn" type="button">Reset redeemed passes</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Refined Footer -->
+  <footer class="site-footer">
+    <div class="footer-pill">
+      <span>Crafted with love for <strong id="footerPartnerName">Dikshuu</strong></span>
+      <span class="footer-sep" aria-hidden="true">•</span>
+      <span id="footerSignature">Forever yours</span>
+    </div>
+  </footer>
+
+  <!-- Editorial Letter Modal -->
+  <div id="letterModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-card">
+      <button id="closeModalBtn" class="modal-close" type="button" aria-label="Close letter">✕</button>
+
+      <div class="modal-header">
+        <span id="modalBadge" class="modal-badge">Mood</span>
+        <div id="modalEmoji" class="modal-emoji" aria-hidden="true"></div>
+        <h3 id="modalTitle" class="modal-title">Open When...</h3>
+      </div>
+
+      <div class="modal-body">
+        <p id="modalLetter" class="modal-letter"></p>
+        <p id="modalSignoff" class="modal-signoff"></p>
+
+        <div id="modalWidget" class="modal-widget"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="prevCardBtn" class="btn btn-soft" type="button">← Previous</button>
+        <span id="modalCounter" class="modal-counter">1 / 8</span>
+        <button id="nextCardBtn" class="btn btn-soft" type="button">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Photo Lightbox Modal -->
+  <div id="photoLightbox" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption" hidden>
+    <div class="modal-card lightbox-card">
+      <button id="closeLightboxBtn" class="modal-close" type="button" aria-label="Close photo">✕</button>
+      <div class="lightbox-frame">
+        <img id="lightboxImg" src="" alt="" />
+      </div>
+      <div class="lightbox-meta">
+        <span id="lightboxTag" class="modal-badge">Favorite Moment</span>
+        <p id="lightboxCaption" class="polaroid-caption"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="prevLightboxBtn" class="btn btn-soft" type="button">← Prev</button>
+        <button id="lovePhotoBtn" class="btn btn-primary btn-love-photo" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>Adore</span>
+          <span id="photoLoveCount">0</span>
+        </button>
+        <button id="nextLightboxBtn" class="btn btn-soft" type="button">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Now Playing Audio Player -->
+  <aside id="musicDock" class="music-dock" aria-label="Song player">
+    <audio id="bgAudio" preload="metadata" loop src="assets/aa-chalke-tujhe.m4a"></audio>
+    <div class="dock-thumb">
+      <img src="assets/dikshuu.jpg" alt="" />
+    </div>
+    <div class="dock-info">
+      <div class="dock-title-row">
+        <span class="dock-title">Aa Chalke Tujhe</span>
+        <span id="audioTime" class="dock-time">0:00</span>
+      </div>
+      <div id="audioProgressWrap" class="dock-progress" role="slider" aria-label="Song progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        <div id="audioProgressFill" class="dock-progress-fill"></div>
+      </div>
+    </div>
+    <button id="dockPlayBtn" class="dock-play-btn" type="button" aria-label="Play song">
+      <svg id="dockPlayIcon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <polygon points="6 3 20 12 6 21 6 3"/>
+      </svg>
+    </button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
